@@ -1563,6 +1563,7 @@
         resetSubmitButtons();
     });
 </script>
+{!! Theme::footer() !!}
 
 </body>
 </html>

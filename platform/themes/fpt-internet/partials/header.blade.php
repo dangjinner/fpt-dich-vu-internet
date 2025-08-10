@@ -2,12 +2,9 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8" />
-    <title>Đăng ký Internet FPT - nhận ngàn ưu đãi</title>
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Expires" content="-1" />
-    <meta name="keywords" content="internet, wifi" />
-    <meta name="description" content="Đăng ký Internet FPT - nhận ngàn ưu đãi" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script type="text/javascript">
         window.ladi_viewport = function (b) {
@@ -50,26 +47,22 @@
             window.ladi_ttq_data.push(arguments);
         };
     </script>
-    <link rel="canonical" href="http://preview.ldpdemo.com/6874e963802c9100202843fc" />
-    <meta property="og:url" content="http://preview.ldpdemo.com/6874e963802c9100202843fc" />
-    <meta property="og:title" content="Đăng ký Internet FPT - nhận ngàn ưu đãi" />
-    <meta property="og:type" content="website" />
     <meta property="og:image" content="{{ Theme::asset()->url('images/banner_1.png') }}" />
-    <meta property="og:description" content="Đăng ký Internet FPT - nhận ngàn ưu đãi" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/x-icon" href="{{ Theme::asset()->url('images/logo.png') }}" />
     <link rel="shortcut icon" href="{{ Theme::asset()->url('images/logo.png') }}" />
     <link rel="apple-touch-icon" href="{{ Theme::asset()->url('images/logo.png') }}" />
     <link rel="apple-touch-icon-precomposed" href="{{ Theme::asset()->url('images/logo.png') }}" />
-    <meta name="msapplication-TileImage" content="{{ Theme::asset()->url('images/logo.png') }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Mulish:wght@400;700&family=Montserrat:wght@400;700&display=swap" as="style" onload="this.onload = null; this.rel = 'stylesheet';" />
     <link rel="stylesheet" href="{{ Theme::asset()->url('css/main.css') }}">
     <link rel="stylesheet" href="{{ Theme::asset()->url('css/customize.css') }}">
+    {!! Theme::header() !!}
 </head>
 <body class="lazyload">
+{!! apply_filters(THEME_FRONT_BODY, null) !!}
 <svg xmlns="http://www.w3.org/2000/svg" style="width: 0px; height: 0px; position: absolute; overflow: hidden; display: none;">
     <symbol id="shape_VRxUDINZJt" viewBox="0 0 32 32"><image href="{{ Theme::asset()->url('images/phone-call.svg') }}" height="32" width="32"></image></symbol>
     <symbol id="shape_OjdhXkKkWw" viewBox="0 0 1664 1896.0833">

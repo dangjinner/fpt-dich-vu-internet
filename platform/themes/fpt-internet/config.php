@@ -51,11 +51,6 @@ return [
             // });
 
             // You may use this event to set up your assets.
-            $theme->asset()->usePath()->add('style', 'css/style.css');
-
-            $theme->asset()->container('footer')->add('jquery', 'libraries/jquery.min.js');
-
-            $theme->asset()->container('footer')->usePath()->add('script', 'js/script.js');
 
             if (function_exists('shortcode')) {
                 $theme->composer(['page', 'post'], function (\Botble\Shortcode\View\View $view) {
