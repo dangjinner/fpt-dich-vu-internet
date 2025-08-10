@@ -45,12 +45,17 @@ return [
         // breadcrumb template.
         'beforeRenderTheme' => function (Theme $theme)
         {
+            $version = app()->environment('local') ? time() : get_cms_version();
+
             // Partial composer.
             // $theme->partialComposer('header', function($view) {
             //     $view->with('auth', \Auth::user());
             // });
 
             // You may use this event to set up your assets.
+            $theme->asset()->usePath()->add('main-css', 'css/main.css', [], [], $version);
+            $theme->asset()->usePath()->add('customize-css', 'css/customize.css', [], [], $version);
+
 
             if (function_exists('shortcode')) {
                 $theme->composer(['page', 'post'], function (\Botble\Shortcode\View\View $view) {

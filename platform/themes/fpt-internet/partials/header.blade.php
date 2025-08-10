@@ -57,8 +57,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Mulish:wght@400;700&family=Montserrat:wght@400;700&display=swap" as="style" onload="this.onload = null; this.rel = 'stylesheet';" />
-    <link rel="stylesheet" href="{{ Theme::asset()->url('css/main.css') }}">
-    <link rel="stylesheet" href="{{ Theme::asset()->url('css/customize.css') }}">
     {!! Theme::header() !!}
 </head>
 <body class="lazyload">
