@@ -1,0 +1,20 @@
+.box-translation {
+    a.status-1 {
+        font-weight: bold;
+    }
+}
+
+#confirm-publish-modal {
+    .btn-warning {
+        &.float-start {
+            background: #4d97c1;
+            border-color: #2d8ec5;
+            color: #fff !important;
+
+            &:hover {
+                background: #3995ca;
+                border-color: #3995ca;
+            }
+        }
+    }
+}
