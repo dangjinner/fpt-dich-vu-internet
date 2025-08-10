@@ -61,3 +61,79 @@
     border: 2px solid red !important;
     border-radius: 8px;
 }
+
+.page-404 {
+    text-align: center;
+    padding: 60px 20px;
+    color: #333;
+}
+
+.page-404 .illustration {
+    margin-bottom: 20px;
+}
+
+.page-404 h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #f37021;
+    margin-bottom: 8px;
+}
+
+.page-404 p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn.primary {
+    background: #f37021;
+    color: #fff;
+    border: none;
+}
+
+.btn.outline {
+    border: 2px solid #0072bc;
+    color: #0072bc;
+    background: transparent;
+}
+
+.thank-you {
+    text-align: center;
+    padding: 60px 20px;
+    color: #333;
+    font-family: sans-serif;
+}
+
+.thank-you .illustration {
+    margin-bottom: 20px;
+}
+
+.thank-you h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #f37021;
+    margin-bottom: 12px;
+}
+
+.thank-you p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+

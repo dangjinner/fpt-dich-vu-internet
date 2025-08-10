@@ -103,7 +103,7 @@
             <div id="IMAGE50" class="ladi-element">
                 <div class="ladi-image"><div class="ladi-image-background"></div></div>
             </div>
-            <a href="tel:0845488660" id="GROUP78" class="ladi-element">
+            <a href="tel:{{ theme_option('hotline') }}" id="GROUP78" class="ladi-element">
                 <div class="ladi-group">
                     <div id="GROUP76" class="ladi-element">
                         <div class="ladi-group">
@@ -114,7 +114,7 @@
                                 </div>
                             </div>
                             <div id="HEADLINE179" class="ladi-element">
-                                <h2 class="ladi-headline">0845488660<br /></h2>
+                                <h2 class="ladi-headline">{{ theme_option('hotline') }}<br /></h2>
                             </div>
                         </div>
                     </div>

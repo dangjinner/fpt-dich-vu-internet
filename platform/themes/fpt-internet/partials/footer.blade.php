@@ -46,7 +46,7 @@
                 <div class="ladi-line-container"></div>
             </div>
         </div>
-        <div id="HEADLINE138" class="ladi-element"><h1 class="ladi-headline">©2020 Allrights reserved mystore.com</h1>
+        <div id="HEADLINE138" class="ladi-element"><p class="ladi-headline">{{ theme_option('copyright') }}</p>
         </div>
         <div id="GROUP39" class="ladi-element">
             <div class="ladi-group">
@@ -375,7 +375,8 @@
                     </div>
                 </div>
                 <div id="FORM10" data-config-id="6866453f2291c90020ea4649" class="ladi-element form-active">
-                    <form action="{{ route('register-service') }}" autocomplete="off" method="post" class="ladi-form register-service-form">
+                    <form action="{{ route('register-service') }}" autocomplete="off" method="post"
+                          class="ladi-form register-service-form">
                         <div id="BUTTON65" class="ladi-element">
                             <div class="ladi-button">
                                 <div class="ladi-button-background"></div>
@@ -469,7 +470,8 @@
                 <div class="ladi-popup-background"></div>
                 <div class="ladi-overlay"></div>
                 <div id="FORM11" data-config-id="6866488161edb40012945108" class="ladi-element form-active">
-                    <form action="{{ route('register-service') }}" autocomplete="off" method="post" class="ladi-form register-service-form" >
+                    <form action="{{ route('register-service') }}" autocomplete="off" method="post"
+                          class="ladi-form register-service-form">
                         <div id="BUTTON66" class="ladi-element">
                             <div class="ladi-button">
                                 <div class="ladi-button-background"></div>
@@ -1176,13 +1178,13 @@
 </div>
 </div>
 <div id="contact-box">
-    <a href="tel:0845488660" class="phone">
+    <a href="tel:{{ theme_option('hotline') }}" class="phone">
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none"
              viewBox="0 0 32 32" class="" fill="#000">
             <use xlink:href="#shape_VRxUDINZJt"></use>
         </svg>
     </a>
-    <a href="http://zalo.me/0937875828" class="zalo">
+    <a href="http://zalo.me/{{ theme_option('zalo') }}" target="_blank" class="zalo">
         <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none"
              viewBox="0 0 32 32" class="" fill="#000">
             <image href="{{ Theme::asset()->url('images/zalo.svg') }}" height="32" width="32"></image>
@@ -1364,10 +1366,10 @@
             "by": true,
             "bx": true
         },
-        "GROUP78": { "a": "group", "cs": [{ "dr": "action", "dw": "0845488660", "a": "phone" }] },
+        "GROUP78": { "a": "group", "cs": [{ "dr": "action", "dw": "{{ theme_option('hotline') }}", "a": "phone" }] },
         "SHAPE88": {
             "a": "shape",
-            "cs": [{ "dr": "action", "dw": "0845488660", "a": "phone" }],
+            "cs": [{ "dr": "action", "dw": "{{ theme_option('hotline') }}", "a": "phone" }],
             "as": "100px",
             "ap": "46px",
             "ar": "5px",
@@ -1381,7 +1383,7 @@
         },
         "SHAPE89": {
             "a": "shape",
-            "cs": [{ "dr": "action", "dv": "_blank", "dw": "http://zalo.me/0937875828", "a": "link" }],
+            "cs": [{ "dr": "action", "dv": "_blank", "dw": "http://zalo.me/{{ theme_option('zalo') }}", "a": "link" }],
             "as": "100px",
             "ap": "139px",
             "ar": "7px",
@@ -1474,6 +1476,11 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
 <script>
+    function getQueryParam(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name) || '';
+    }
+
     function resetSubmitButtons() {
         document.querySelectorAll('.btn-submit').forEach(button => {
             const newButton = button.cloneNode(true);
@@ -1501,10 +1508,10 @@
             // Thêm validate cho form mới
             $(newForm).validate({
                 rules: {
-                    name: { required: true },
-                    phone: { required: true, phoneVN: true },
-                    address: { required: true },
-                    service: { required: true }
+                    name: {required: true},
+                    phone: {required: true, phoneVN: true},
+                    address: {required: true},
+                    service: {required: true}
                 },
                 errorPlacement: () => true, // Không append error message
                 highlight: function (element) {
@@ -1515,10 +1522,15 @@
                 },
                 submitHandler: function (form) {
                     const formData = {
-                        name:    $(form).find('[name="name"]').val(),
-                        phone:   $(form).find('[name="phone"]').val(),
+                        name: $(form).find('[name="name"]').val(),
+                        phone: $(form).find('[name="phone"]').val(),
                         address: $(form).find('[name="address"]').val(),
-                        service: $(form).find('[name="service"]').val()
+                        service: $(form).find('[name="service"]').val(),
+                        utm_source: getQueryParam('utm_source'),
+                        utm_medium: getQueryParam('utm_medium'),
+                        utm_campaign: getQueryParam('utm_campaign'),
+                        utm_term: getQueryParam('utm_term'),
+                        utm_content: getQueryParam('utm_content')
                     };
 
                     $.ajax({
@@ -1530,7 +1542,7 @@
                         },
                         success: function (response) {
                             console.log('✅ Đăng ký thành công', response);
-                            alert('Đăng ký thành công!');
+                            window.location.href = '{{ route('thank-you') }}';
                         },
                         error: function (xhr) {
                             console.error('❌ Lỗi khi đăng ký', xhr);
@@ -1547,8 +1559,7 @@
     }, "Số điện thoại không hợp lệ");
 
     document.addEventListener('DOMContentLoaded', function () {
-        resetFormWithValidation('#FORM11 .register-service-form');
-        resetFormWithValidation('#FORM10 .register-service-form');
+        resetFormWithValidation('.register-service-form');
         resetSubmitButtons();
     });
 </script>

@@ -4,8 +4,8 @@
         <div id="HEADLINE113" class="ladi-element"><h1 class="ladi-headline">ĐĂNG KÝ NHẬN TƯ VẤN INTERNET &amp; TRUYỀN HÌNH FPT</h1></div>
         <div id="HEADLINE114" class="ladi-element"><h3 class="ladi-headline">Đăng ký liền tay nhận ngay ưu đãi</h3></div>
         <div id="FORM4" data-config-id="6866488161edb40012945108" class="ladi-element">
-            <form autocomplete="off" method="post" class="ladi-form">
-                <div id="BUTTON37" class="ladi-element">
+            <form autocomplete="off" method="post" class="ladi-form register-service-form">
+                <div id="BUTTON37" class="ladi-element btn-submit">
                     <div class="ladi-button">
                         <div class="ladi-button-background"></div>
                         <div id="BUTTON_TEXT37" class="ladi-element ladi-button-headline"><p class="ladi-headline">ĐĂNG KÝ TƯ VẤN</p></div>
@@ -35,7 +35,7 @@
                     <div class="ladi-form-item-container">
                         <div class="ladi-form-item-background"></div>
                         <div class="ladi-form-item">
-                            <select tabindex="5" name="form_item15" class="ladi-form-control ladi-form-control-select" data-selected="">
+                            <select tabindex="5" name="service" class="ladi-form-control ladi-form-control-select" data-selected="">
                                 <option value="">Gói dịch vụ quan tâm</option>
                                 <option value="Internet Wifi">Internet Wifi</option>
                                 <option value="Internet &#38; Truyền hình">Internet &#38; Truyền hình</option>

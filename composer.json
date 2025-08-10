@@ -26,6 +26,8 @@
         "botble/theme": "*@dev",
         "botble/widget": "*@dev",
         "doctrine/dbal": "^3.6",
+        "google/apiclient": "^2.18",
+        "google/apiclient-services": "^0.406.0",
         "guzzlehttp/guzzle": "^7.7",
         "laravel/framework": "^10.24",
         "laravel/sanctum": "^3.2",
@@ -94,7 +96,8 @@
             "merge-scripts": false
         },
         "google/apiclient-services": [
-            "Analytics"
+            "Analytics",
+            "Sheets"
         ],
         "aws/aws-sdk-php": [
             "S3",

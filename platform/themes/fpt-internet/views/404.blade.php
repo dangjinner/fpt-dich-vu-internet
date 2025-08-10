@@ -5,24 +5,25 @@
 
 {!! Theme::partial('header') !!}
 
-<div class="container error-page">
-    <div class="error-code">
-        404
-    </div>
-
-    <div class="error-border"></div>
-        <h4>{{ __('This may have occurred because of several reasons') }}:</h4>
-        <ul>
-            <li>{{ __('The page you requested does not exist.') }}</li>
-            <li>{{ __('The link you clicked is no longer.') }}</li>
-            <li>{{ __('The page may have moved to a new location.') }}</li>
-            <li>{{ __('An error may have occurred.') }}</li>
-            <li>{{ __('You are not authorized to view the requested resource.') }}</li>
-        </ul>
-        <br>
-        <strong>{!! BaseHelper::clean(__('Please try again in a few minutes, or alternatively return to the homepage by <a href=":link">clicking here</a>.', ['link' => route('public.index')])) !!}</strong>
+<div class="page-404">
+    <div class="content">
+        <div class="illustration">
+            <!-- SVG đơn giản -->
+            <svg width="150" height="150" viewBox="0 0 150 150">
+                <circle cx="75" cy="75" r="70" fill="#0072bc"/>
+                <text x="50%" y="55%" text-anchor="middle" fill="#fff" font-size="48" font-weight="700">404</text>
+            </svg>
+        </div>
+        <h1>Trang không tìm thấy</h1>
+        <p>Xin lỗi, chúng tôi không tìm thấy trang bạn đang tìm kiếm.</p>
+        <div class="actions">
+            <a href="/" class="btn primary">Về trang chủ</a>
+            <button onclick="history.back()" class="btn outline">Quay lại</button>
+        </div>
     </div>
 </div>
+
+
 {!! Theme::partial('footer') !!}
 
 
