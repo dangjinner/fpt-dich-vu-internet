@@ -1,0 +1,63 @@
+#contact-box {
+    position: fixed;
+    bottom: 50px; /* Cách bottom nhiều hơn */
+    right: 50px;  /* Cách right nhiều hơn */
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Khoảng cách giữa icon */
+    z-index: 9999;
+}
+
+#contact-box a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+/* Phone */
+#contact-box a.phone {
+    background-color: #28a745;
+    animation: wiggle 1.5s infinite ease-in-out, glow-green 1.5s infinite ease-in-out;
+}
+
+/* Zalo */
+#contact-box a.zalo {
+    background-color: #0068ff;
+    animation: wiggle 1.5s infinite ease-in-out, glow-blue 1.5s infinite ease-in-out;
+}
+
+/* Lắc mạnh hơn */
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(12deg); }
+    40% { transform: rotate(-12deg); }
+    60% { transform: rotate(12deg); }
+    80% { transform: rotate(-12deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Glow xanh lá nhẹ */
+@keyframes glow-green {
+    0%, 100% { box-shadow: 0 0 6px #28a745, 0 0 12px #28a745; }
+    50% { box-shadow: 0 0 12px #28a745, 0 0 20px #28a745; }
+}
+
+/* Glow xanh Zalo nhẹ */
+@keyframes glow-blue {
+    0%, 100% { box-shadow: 0 0 6px #0068ff, 0 0 12px #0068ff; }
+    50% { box-shadow: 0 0 12px #0068ff, 0 0 20px #0068ff; }
+}
+
+/* Hover */
+#contact-box a:hover {
+    transform: scale(1.2);
+}
+
+.input-error {
+    border: 2px solid red !important;
+    border-radius: 8px;
+}
