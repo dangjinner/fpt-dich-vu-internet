@@ -45,14 +45,14 @@ class ProcessContactSubmission implements ShouldQueue
         }
 
         // 2. Gửi email thông báo
-        try {
-            $emails = theme_option('notify_emails');
-            $emailArray = array_filter(array_map('trim', preg_split('/[,;]+/', $emails)));
-
-            Mail::to($emailArray)->send(new ContactNotification($this->contactData));
-        } catch (\Exception $e) {
-            \Log::error('Gửi email thất bại: ' . $e->getMessage());
-        }
+//        try {
+//            $emails = theme_option('notify_emails');
+//            $emailArray = array_filter(array_map('trim', preg_split('/[,;]+/', $emails)));
+//
+//            Mail::to($emailArray)->send(new ContactNotification($this->contactData));
+//        } catch (\Exception $e) {
+//            \Log::error('Gửi email thất bại: ' . $e->getMessage());
+//        }
     }
 
     private function appendToGoogleSheet($contact)
