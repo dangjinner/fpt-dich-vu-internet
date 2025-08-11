@@ -21,7 +21,7 @@
         <div id="HEADLINE110" class="ladi-element"><h1 class="ladi-headline">180K/THÁNG</h1></div>
         <div id="HEADLINE111" class="ladi-element"><h2 class="ladi-headline">NGẬP TRÀN ƯU ĐÃI</h2></div>
         <div id="HEADLINE149" class="ladi-element">
-            <h2 class="ladi-headline">Tặng Tháng cước, Modem Wifi 6, Camera, Mesh<br/></h2>
+            <h2 class="ladi-headline">Tặng Tháng cước, Modem Wifi 6, Mesh<br/></h2>
         </div>
         <div id="IMAGE48" class="ladi-element">
             <div class="ladi-image">

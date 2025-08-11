@@ -24,8 +24,8 @@
                 <div id="IMAGE8" class="ladi-element">
                     <div class="ladi-image ladi-transition"><div class="ladi-image-background"></div></div>
                 </div>
-                <div id="HEADLINE11" class="ladi-element"><h3 class="ladi-headline ladi-transition">tặng miễn phí</h3></div>
-                <div id="HEADLINE12" class="ladi-element"><h3 class="ladi-headline ladi-transition">CAMERA AI</h3></div>
+                <div id="HEADLINE11" class="ladi-element"><h3 class="ladi-headline ladi-transition">đăng ký online</h3></div>
+                <div id="HEADLINE12" class="ladi-element"><h3 class="ladi-headline ladi-transition sale-online-text">Giảm ngay 200k</h3></div>
             </div>
         </div>
         <div id="GROUP8" class="ladi-element">

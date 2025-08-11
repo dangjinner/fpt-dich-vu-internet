@@ -80,7 +80,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div id="HEADLINE141" class="ladi-element"><p class="ladi-headline">Hotline: 024 7300 2222</p>
+                        <div id="HEADLINE141" class="ladi-element"><p class="ladi-headline">Hotline: {{ theme_option('hotline') }}</p>
                         </div>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div id="HEADLINE143" class="ladi-element"><p class="ladi-headline">Website: http://fpt.vn/</p>
+                        <div id="HEADLINE143" class="ladi-element"><p class="ladi-headline">Website: {{ url('/') }}</p>
                         </div>
                     </div>
                 </div>
