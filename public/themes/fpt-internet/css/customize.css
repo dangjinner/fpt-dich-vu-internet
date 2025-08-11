@@ -138,6 +138,7 @@
 }
 
 .sale-online-text {
-    font-size: 28px !important;
+    font-size: 26px !important;
+    text-transform: uppercase;
 }
 
