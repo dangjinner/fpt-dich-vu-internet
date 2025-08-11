@@ -539,12 +539,12 @@
             <div class="ladi-popup">
                 <div class="ladi-popup-background"></div>
                 <div class="ladi-overlay"></div>
-                <div id="HEADLINE213" class="ladi-element"><h2 class="ladi-headline">ƯU ĐÃI TRONG THÁNG 7</h2></div>
+                <div id="HEADLINE213" class="ladi-element"><h2 class="ladi-headline">ƯU ĐÃI TRONG THÁNG {{ now()->month }}</h2></div>
                 <div id="GROUP80" class="ladi-element">
                     <div class="ladi-group">
                         <div id="PARAGRAPH212" class="ladi-element">
                             <div class="ladi-paragraph">Miễn phí tặng thiết bị wifi 6 hai băng tần với tất cả khách hàng
-                                đăng ký internet trong tháng 7
+                                đăng ký internet trong tháng {{ now()->month }}
                             </div>
                         </div>
                         <div id="SHAPE90" class="ladi-element">
