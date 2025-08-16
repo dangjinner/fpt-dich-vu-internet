@@ -1317,6 +1317,23 @@
     }
 </style>
 <script src="{{ Theme::asset()->url('js/ladipagev3.min.js') }}" type="text/javascript"></script>
+<script>
+    // --- override sau khi ladipage đã load ---
+    window.LadiFormApi = {};
+    window.LadiFormApi.submit = function() {
+        console.log("Đã chặn submit form về Ladipage");
+        return false;
+    };
+
+    if (window.LadiPageScript) {
+        window.LadiPageScript.sendRequest = function(method, url, data, async, headers, callback) {
+            console.log("Đã chặn request:", method, url);
+            if (typeof callback === "function") {
+                callback(null, null, { readyState: 4, status: 200 });
+            }
+        };
+    }
+</script>
 <script id="script_event_data" type="application/json">
     {
         "CAROUSEL4": { "a": "carousel", "cN": 2, "cG": "type_abab", "H": "245px", "G": "204px", "cM": "1px", "cJ": "horizontal", "R": true, "O": 4, "L": "1250px" },
@@ -1450,23 +1467,6 @@
                 return;
             }
             window.LadiPageApp = window.LadiPageApp || new window.LadiPageAppV2();
-            window.LadiPageScript.runtime.ladipage_id = "6874e963802c9100202843fc";
-            window.LadiPageScript.runtime.publish_platform = "LADIPAGE";
-            window.LadiPageScript.runtime.version = "1752746419968";
-            window.LadiPageScript.runtime.cdn_url = "https://w.ladicdn.com/v5/source/";
-            window.LadiPageScript.runtime.DOMAIN_FREE = ["preview.ldpdemo.com", "ldp.page"];
-            window.LadiPageScript.runtime.bodyFontSize = 12;
-            window.LadiPageScript.runtime.store_id = "";
-            window.LadiPageScript.runtime.store_ladiuid = "67106ba3d1325e00123b1906";
-            window.LadiPageScript.runtime.time_zone = 7;
-            window.LadiPageScript.runtime.currency = "VND";
-            window.LadiPageScript.runtime.convert_replace_str = true;
-            window.LadiPageScript.runtime.desktop_width = 960;
-            window.LadiPageScript.runtime.mobile_width = 420;
-            window.LadiPageScript.runtime.formdata = true;
-            window.LadiPageScript.runtime.tracking_button_click = true;
-            window.LadiPageScript.runtime.publish_time = 1752824929381;
-            window.LadiPageScript.runtime.lang = "vi";
             window.LadiPageScript.run(true);
             window.LadiPageScript.runEventScroll();
         };
@@ -1521,6 +1521,15 @@
                     $(element).closest('.ladi-form-item').removeClass('input-error');
                 },
                 submitHandler: function (form) {
+                    const $btn = $(form).find('.btn-submit');
+                    const $text = $btn.find('p');
+
+                    // Ẩn text, thêm loading
+                    $text.hide();
+                    if ($btn.find('.loading-spinner').length === 0) {
+                        $btn.append('<div class="loading-spinner"></div>');
+                    }
+
                     const formData = {
                         name: $(form).find('[name="name"]').val(),
                         phone: $(form).find('[name="phone"]').val(),
@@ -1547,6 +1556,11 @@
                         error: function (xhr) {
                             console.error('❌ Lỗi khi đăng ký', xhr);
                             alert('Có lỗi xảy ra, vui lòng thử lại.');
+                        },
+                        complete: function () {
+                            // Bỏ loading, show lại text
+                            $btn.find('.loading-spinner').remove();
+                            $text.show();
                         }
                     });
                 }

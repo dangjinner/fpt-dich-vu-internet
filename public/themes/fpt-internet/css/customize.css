@@ -142,3 +142,45 @@
     text-transform: uppercase;
 }
 
+
+.btn-submit:has(.loading-spinner) {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-spinner {
+    width: 36px;
+    height: 36px;
+    border: 4px solid #f97316;   /* màu cam */
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (min-width: 768px) {
+    #PARAGRAPH202 > .ladi-paragraph {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .sale-online-text {
+        font-size: 14px !important;
+    }
+
+    #HEADLINE179 .heading-phone {
+        font-size: 15px;
+    }
+
+    #HEADLINE179 {
+        top: 10px;
+        left: 52px;
+    }
+}
+
+
